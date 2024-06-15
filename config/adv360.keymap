@@ -118,7 +118,7 @@
     layer_Base {
       bindings = <
         &none      &none    &none     &none   &none  &none &kp LBKT                                                                            &kp RBKT &none  &none  &none   &none    &none    &none
-        &none      &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y &kp LPAR                                                                            &kp LPAR &kp F  &kp G  &kp C   &kp R    &kp L    &none
+        &none      &kp SQT  &kp COMMA &kp DOT &kp P  &kp Y &kp LPAR                                                                            &kp RPAR &kp F  &kp G  &kp C   &kp R    &kp L    &none
         &tdcaps    &HRM_A   &HRM_O    &HRM_E  &HRM_U &kp I &kp LBRC               &mt LSHFT ESC &sk LSHFT    &sk RSHFT  &mt RSHFT DEL          &kp RBRC &kp D  &HRM_H &HRM_T  &HRM_N   &HRM_S   &key_repeat
         &none      &kp FSLH &kp Q     &kp J   &kp K  &kp X                                      &kp LCTRL    &kp RCTRL                                  &kp B  &kp M  &kp W   &kp V    &kp Z    &none
         &mo LMAGIC &none    &none     &none   &none                &ltp LNAV SPACE &ltp LFN TAB &kp LALT     &kp RALT &ltp LSYM ENTER &ltp LNUM BSPC           &none  &none   &none    &none    &to LGAMING
