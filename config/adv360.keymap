@@ -109,6 +109,16 @@
             tapping-term-ms = <100>;
             retro-tap;
         };
+
+        bspc_del: bspc_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BSPC_DEL";
+            bindings = <&kp BACKSPACE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
     };
 };
 
@@ -118,61 +128,61 @@
 
         layer_Base {
             bindings = <
-&none                   &none     &none      &none    &none  &none  &none                                          &none       &none  &none  &none  &none  &none  &none
-&kp ESC                 &kp SQT   &kp COMMA  &kp DOT  &kp P  &kp Y  &none                                          &none       &kp F  &kp G  &kp C  &kp R  &kp L  &none
-&esc_ctrl LCTRL ESCAPE  &kp A     &kp O      &kp E    &kp U  &kp I  &none      &none    &none      &none  &none    &none       &kp D  &kp H  &kp T  &kp N  &kp S  &none
-&kp LSHFT               &kp FSLH  &kp Q      &kp J    &kp K  &kp X                      &none      &none                       &kp B  &kp M  &kp W  &kp V  &kp Z  &none
-&mo LMAGIC              &none     &none      &none    &none         &kp SPACE  &kp TAB  &none      &none  &kp RET  &kp DELETE         &none  &none  &none  &none  &to LGAMING
+&mo 6  &kp N1    &kp N2     &kp N3     &kp N4     &kp N5  &none                                          &none     &kp NUMBER_6  &kp N7     &kp N8     &kp N9    &kp N0    &to 1
+&none  &kp SQT   &kp COMMA  &kp DOT    &kp P      &kp Y   &none                                          &none     &kp F         &kp G      &kp C      &kp R     &kp L     &none
+&none  &kp A     &kp O      &kp E      &kp U      &kp I   &none      &kp ESC  &none      &none  &kp DEL  &none     &kp D         &kp H      &kp T      &kp N     &kp S     &none
+&mo 5  &kp FSLH  &kp Q      &kp J      &kp K      &kp X                       &none      &none                     &kp B         &kp M      &kp W      &kp V     &kp Z     &mo 3
+&mo 2  &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT          &kp SPACE  &kp TAB  &none      &none  &kp RET  &kp BSPC                &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &mo 4
             >;
         };
 
         layer_Gaming {
             bindings = <
-&kp N5      &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
-&kp N6      &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
-&kp N7      &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
-&kp N8      &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
-&mo LMAGIC  &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to LBASE
+&kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
+&kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
+&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
+&kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
+&mo 6   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
         layer_Nav {
             bindings = <
-&none       &none     &none     &none      &none      &none  &none                                    &none     &none  &none     &none      &none      &none      &none
-&none       &none     &none     &none      &none      &none  &none                                    &none     &none  &none     &none      &none      &none      &none
-&none       &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none  &none  &none  &none      &none  &kp DEL  &none     &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
-&none       &none     &none     &none      &none      &none                &none      &none                     &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-&mo LMAGIC  &none     &none     &none      &none             &none  &none  &none      &none  &kp RET  &kp BSPC         &none     &none      &none      &none      &none
+&none  &none   &none   &none   &none   &none  &none                                  &none  &none  &none     &none      &none      &none      &none
+&none  &none   &none   &none   &none   &none  &none                                  &none  &none  &none     &none      &none      &none      &none
+&none  &none   &none   &none   &none   &none  &none  &none  &none      &none  &none  &none  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &none   &none   &none   &none   &none                &none      &none                &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
+&none  &trans  &trans  &trans  &trans         &none  &none  &none      &none  &none  &none         &none     &none      &none      &none      &none
             >;
         };
 
         layer_Num {
             bindings = <
-&none       &none      &none   &none   &none   &none      &none                                             &none  &none  &none      &none      &none     &none     &none
-&none       &kp COMMA  &kp N7  &kp N8  &kp N9  &kp N0     &none                                             &none  &none  &none      &none      &none     &none     &none
-&none       &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &none      &kp MINUS  &kp PLUS      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none       &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                         &kp FSLH      &none                &none  &none      &none      &none     &none     &none
-&mo LMAGIC  &none      &none   &none   &none              &kp SPACE  &kp DOT    &kp STAR      &none  &none  &none         &none      &none      &none     &none     &none
+&none  &none      &none   &none   &none   &none      &none                                             &none  &none  &none      &none      &none     &none     &none
+&none  &kp COMMA  &kp N7  &kp N8  &kp N9  &kp N0     &none                                             &none  &none  &none      &none      &none     &none     &none
+&none  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &none      &kp MINUS  &kp PLUS      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                         &kp FSLH      &none                &none  &none      &none      &none     &none     &none
+&mo 6  &none      &none   &none   &none              &kp SPACE  &kp DOT    &kp STAR      &none  &none  &none         &none      &none      &none     &none     &none
             >;
         };
 
         layer_Sym {
             bindings = <
-&none       &none      &none     &none      &none      &none     &none                                             &none  &none  &none      &none      &none     &none     &none
-&none       &kp LPAR   &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR  &none                                             &none  &none  &none      &none      &none     &none     &none
-&none       &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp UNDER  &kp RBRC      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none       &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE                        &kp LBRC      &none                &none  &none      &none      &none     &none     &none
-&mo LMAGIC  &none      &none     &none      &none                &kp SPACE  &kp LBKT   &kp RBKT      &none  &none  &none         &none      &none      &none     &none     &none
+&none  &none      &none     &none      &none      &none     &none                                             &none  &none  &none      &none      &none     &none     &none
+&none  &kp LPAR   &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR  &none                                             &none  &none  &none      &none      &none     &none     &none
+&none  &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp UNDER  &kp RBRC      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE                        &kp LBRC      &none                &none  &none      &none      &none     &none     &none
+&mo 6  &none      &none     &none      &none                &kp SPACE  &kp LBKT   &kp RBKT      &none  &none  &none         &none      &none      &none     &none     &none
             >;
         };
 
         layer_Fn {
             bindings = <
-&none       &none  &kp F10  &kp F11  &kp F12  &none  &none                                  &none  &none  &none      &none      &none     &none     &none
-&none       &none  &kp F7   &kp F8   &kp F9   &none  &none                                  &none  &none  &none      &none      &none     &none     &none
-&none       &none  &kp F4   &kp F5   &kp F6   &none  &none  &none  &none      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none       &none  &kp F1   &kp F2   &kp F3   &none                &none      &none                &none  &none      &none      &none     &none     &none
-&mo LMAGIC  &none  &none    &none    &none           &none  &none  &none      &none  &none  &none         &none      &none      &none     &none     &none
+&none  &none  &kp F10  &kp F11  &kp F12  &none  &none                                  &none  &none  &none      &none      &none     &none     &none
+&none  &none  &kp F7   &kp F8   &kp F9   &none  &none                                  &none  &none  &none      &none      &none     &none     &none
+&none  &none  &kp F4   &kp F5   &kp F6   &none  &none  &none  &none      &none  &none  &none  &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &none  &kp F1   &kp F2   &kp F3   &none                &none      &none                &none  &none      &none      &none     &none     &none
+&mo 6  &none  &none    &none    &none           &none  &none  &none      &none  &none  &none         &none      &none      &none     &none     &none
             >;
         };
 
