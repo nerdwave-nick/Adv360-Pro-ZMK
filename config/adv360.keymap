@@ -169,6 +169,17 @@
             release-after-ms = <1000>;
             ignore-modifiers;
         };
+
+        htlayer: htlayer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTLAYER";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            hold-while-undecided;
+            retro-tap;
+        };
     };
 };
 
@@ -178,11 +189,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                              &kp RPAR           &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
-&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC  &none      &none  &kp DEL  &kp RBRC           &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
-&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                              &lfn       &lsym                              &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
-&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &kp SPACE         &kp TAB  &lnav      &lnum  &kp RET  &kp BSPC                         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
+&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                                      &kp RIGHT_BRACKET     &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                                              &kp RPAR              &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
+&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC         &none      &none  &kp DEL           &kp RBRC              &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
+&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                                     &lfn       &lsym                                          &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
+&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &htlayer 2 SPACE  &htlayer 5 TAB  &lnav      &lnum  &htlayer 4 ENTER  &htlayer 3 BACKSPACE                &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
             >;
         };
 
