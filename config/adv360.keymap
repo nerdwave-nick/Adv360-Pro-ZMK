@@ -21,6 +21,10 @@
 #define HRM_T hrm RCTRL T
 #define HRM_H hrm_i RSHFT H
 
+&sk { quick-release; };
+
+&sl { ignore-modifiers; };
+
 / {
     macros {
         bt_0: bt_0 {
