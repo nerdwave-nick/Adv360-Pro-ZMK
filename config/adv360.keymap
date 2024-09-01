@@ -68,6 +68,20 @@
             bindings = <&kp DQT &kp DQT &kp LEFT>;
             label = "QOT";
         };
+
+        version: version {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp D &kp V &kp O &kp R &kp A &kp K &kp SPACE &kp N &kp E &kp W &kp SPACE &kp MINUS &kp SPACE &kp N1 &kp DOT &kp N1 &kp DOT &kp N4>;
+            label = "VERSION";
+        };
+
+        vim_save_file: vim_save_file {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON &kp W &kp ENTER>;
+            label = "VIM_SAVE_FILE";
+        };
     };
 };
 
@@ -193,11 +207,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                                              &kp RPAR           &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
-&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC         &none      &none  &kp DEL           &kp RBRC           &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
-&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                                     &none      &none                                       &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
-&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &kp SPACE         &htlayer 2 TAB  &lfn       &lsym  &htlayer 3 ENTER  &kp BACKSPACE                    &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
+&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                                                          &kp RPAR           &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
+&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC         &vim_save_file      &version  &kp DEL           &kp RBRC           &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
+&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                                     &lnav               &lnum                                          &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
+&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &kp SPACE         &htlayer 2 TAB  &lfn                &lsym     &htlayer 3 ENTER  &kp BACKSPACE                    &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
             >;
         };
 
