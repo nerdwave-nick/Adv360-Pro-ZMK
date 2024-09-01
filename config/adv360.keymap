@@ -159,6 +159,16 @@
             #binding-cells = <0>;
             bindings = <&sl 4>, <&tog 4>;
         };
+
+        sticky_shift: sticky_shift {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_SHIFT";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            quick-release;
+            release-after-ms = <1000>;
+            ignore-modifiers;
+        };
     };
 };
 
@@ -168,11 +178,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4     &kp N5  &kp LEFT_BRACKET                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P      &kp Y   &kp LPAR                                              &kp RPAR           &kp F         &kp G      &kp C      &kp R     &kp L     &kp EQUAL
-&kp SEMI      &kp A     &kp O      &kp E      &kp U      &kp I   &kp LBRC          &kp ESC  &none      &none  &kp DEL  &kp RBRC           &kp D         &kp H      &kp T      &kp N     &kp S     &key_repeat
-&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K      &kp X                              &lfn       &lsym                              &kp B         &kp M      &kp W      &kp V     &kp Z     &caps_word
-&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT          &kp SPACE         &kp TAB  &lnav      &lnum  &kp RET  &kp BSPC                         &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
+&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                              &kp RPAR           &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
+&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC  &none      &none  &kp DEL  &kp RBRC           &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
+&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                              &lfn       &lsym                              &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
+&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &kp SPACE         &kp TAB  &lnav      &lnum  &kp RET  &kp BSPC                         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
             >;
         };
 
@@ -188,41 +198,41 @@
 
         layer_Nav {
             bindings = <
-&none  &none     &none     &none      &none      &none  &none                                    &none  &none  &none     &none      &none      &none      &none
-&none  &none     &none     &none      &none      &none  &none                                    &none  &none  &none     &none      &none      &none      &none
-&none  &none     &none     &none      &none      &none  &none  &trans  &none       &none  &none  &none  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &none     &none     &none      &none      &none                 &none       &none                &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-&none  &sk LGUI  &sk LALT  &sk LCTRL  &sk LSHFT         &none  &none   &tog 2      &none  &none  &none         &none     &none      &none      &none      &none
+&none  &none     &none     &none      &none                &none  &none                                    &none  &none  &none     &none      &none      &none      &none
+&none  &none     &none     &none      &none                &none  &none                                    &none  &none  &none     &none      &none      &none      &none
+&none  &none     &none     &none      &none                &none  &none  &trans  &none       &none  &none  &none  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
+&none  &none     &none     &none      &none                &none                 &none       &none                &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
+&none  &sk LGUI  &sk LALT  &sk LCTRL  &sticky_shift LSHFT         &none  &none   &tog 2      &none  &none  &none         &none     &none      &none      &none      &none
             >;
         };
 
         layer_Num {
             bindings = <
-&none  &none      &none   &none   &none   &none      &none                                              &none  &none  &none      &none      &none          &none     &none
-&none  &kp COMMA  &kp N7  &kp N8  &kp N9  &kp N0     &none                                              &none  &none  &none      &none      &none          &none     &none
-&none  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &none      &kp MINUS  &kp PLUS      &none   &none  &none  &none  &none      &none      &none          &none     &none
-&none  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                         &kp FSLH      &none                 &none  &none      &none      &none          &none     &sk RSHFT
-&none  &none      &none   &none   &none              &kp SPACE  &kp DOT    &kp STAR      &tog 3  &none  &none         &sk RSHFT  &sk RCTRL  &sk RIGHT_ALT  &sk RGUI  &none
+&none  &none      &none   &none   &none   &none      &none                                              &none  &none  &none                &none      &none          &none     &none
+&none  &kp COMMA  &kp N7  &kp N8  &kp N9  &kp N0     &none                                              &none  &none  &none                &none      &none          &none     &none
+&none  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &none      &kp MINUS  &kp PLUS      &none   &none  &none  &none  &none                &none      &none          &none     &none
+&none  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                         &kp FSLH      &none                 &none  &none                &none      &none          &none     &sk RSHFT
+&none  &none      &none   &none   &none              &kp SPACE  &kp DOT    &kp STAR      &tog 3  &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RIGHT_ALT  &sk RGUI  &none
             >;
         };
 
         layer_Sym {
             bindings = <
-&none  &none      &none     &none      &none      &none     &none                                              &none  &none  &none      &none      &none     &none     &none
-&none  &kp LPAR   &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR  &none                                              &none  &none  &none      &none      &none     &none     &none
-&none  &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp UNDER  &kp RBRC      &none   &none  &none  &none  &none      &none      &none     &none     &none
-&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE                        &kp LBRC      &tog 4                &none  &none      &none      &none     &none     &none
-&none  &none      &none     &none      &none                &kp SPACE  &kp LBKT   &kp RBKT      &none   &none  &none         &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
+&none  &none      &none     &none      &none      &none     &none                                              &none  &none  &none                &none      &none     &none     &none
+&none  &kp LPAR   &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR  &none                                              &none  &none  &none                &none      &none     &none     &none
+&none  &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp UNDER  &kp RBRC      &none   &none  &none  &none  &none                &none      &none     &none     &none
+&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE                        &kp LBRC      &tog 4                &none  &none                &none      &none     &none     &none
+&none  &none      &none     &none      &none                &kp SPACE  &kp LBKT   &kp RBKT      &none   &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
             >;
         };
 
         layer_Fn {
             bindings = <
-&none  &none  &kp F10  &kp F11  &kp F12  &none  &none                                   &none  &none  &none      &none      &none     &none     &none
-&none  &none  &kp F7   &kp F8   &kp F9   &none  &none                                   &none  &none  &none      &none      &none     &none     &none
-&none  &none  &kp F4   &kp F5   &kp F6   &none  &none  &none  &none       &none  &none  &none  &none  &none      &none      &none     &none     &none
-&none  &none  &kp F1   &kp F2   &kp F3   &none                &tog 5      &none                &none  &none      &none      &none     &none     &none
-&none  &none  &none    &none    &none           &none  &none  &none       &none  &none  &none         &sk RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
+&none  &none  &kp F10  &kp F11  &kp F12  &none  &none                                   &none  &none  &none                &none      &none     &none     &none
+&none  &none  &kp F7   &kp F8   &kp F9   &none  &none                                   &none  &none  &none                &none      &none     &none     &none
+&none  &none  &kp F4   &kp F5   &kp F6   &none  &none  &none  &none       &none  &none  &none  &none  &none                &none      &none     &none     &none
+&none  &none  &kp F1   &kp F2   &kp F3   &none                &tog 5      &none                &none  &none                &none      &none     &none     &none
+&none  &none  &none    &none    &none           &none  &none  &none       &none  &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
             >;
         };
 
