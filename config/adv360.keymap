@@ -168,6 +168,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             retro-tap;
+            flavor = "balanced";
         };
 
         ht_layer_del_bspc: ht_layer_del_bspc {
@@ -178,6 +179,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <280>;
             retro-tap;
+            flavor = "balanced";
         };
     };
 };
