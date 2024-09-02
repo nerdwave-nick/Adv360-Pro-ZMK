@@ -61,7 +61,7 @@
         qot: qot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DQT &kp DQT &kp LEFT>;
+            bindings = <&kp DQT &kp DQT &kp LEFT &kp LSHFT>;
             label = "QOT";
         };
 
@@ -89,7 +89,7 @@
         squot: squot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp SQT &kp DQT &kp LEFT>;
+            bindings = <&kp SQT &kp SQT &kp LEFT>;
             label = "SQUOT";
         };
     };
@@ -168,11 +168,11 @@
 
         lbase {
             bindings = <
-&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                    &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
-&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                            &kp RPAR           &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
-&td_caps_lsft  &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC          &sl 3   &none      &none  &sl 6   &kp RBRC           &kp D         &kp H     &kp T     &kp N         &kp S      &td_cword_rsft
-&kp ESCAPE     &kp FSLH   &kp Q      &kp J    &kp K   &kp X                             &none      &none                             &kp B         &kp M     &kp W     &kp V         &kp Z      &key_repeat
-&mo 2          &msdquots  &brckts    &pars    &brcs           &kp SPACE         &mmtab  &sl 8      &sl 7  &mmret  &mm_del_bspc                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
+&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
+&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                              &kp RPAR           &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
+&td_caps_lsft  &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC          &sl 4    &sl 3      &sl 6  &sl 5    &kp RBRC           &kp D         &kp H     &kp T     &kp N         &kp S      &td_cword_rsft
+&kp ESCAPE     &kp FSLH   &kp Q      &kp J    &kp K   &kp X                              &none      &none                              &kp B         &kp M     &kp W     &kp V         &kp Z      &key_repeat
+&mo 2          &msdquots  &brckts    &pars    &brcs           &kp SPACE         &kp TAB  &sl 8      &sl 7  &kp RET  &mm_del_bspc                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
             >;
         };
 
@@ -208,21 +208,21 @@
 
         lnav {
             bindings = <
-&trans  &trans             &trans             &trans              &trans              &trans  &trans                                         &trans  &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &trans             &trans             &trans              &trans              &trans  &trans                                         &trans  &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans  &trans      &trans  &trans     &trans  &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans             &trans             &trans              &trans              &trans                  &trans      &trans                     &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &trans             &trans             &trans              &trans                      &trans  &trans  &trans      &trans  &kp ENTER  &trans          &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                          &trans  &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                          &trans  &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans   &trans      &trans  &trans     &trans  &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans             &trans             &trans              &trans              &trans                   &trans      &trans                     &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans                      &trans  &kp TAB  &trans      &trans  &kp ENTER  &trans          &trans    &trans    &trans        &trans     &trans
             >;
         };
 
         lnum {
             bindings = <
-&trans  &trans     &trans  &trans  &trans  &trans     &trans                                         &trans  &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0     &trans                                         &trans  &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &kp MINUS  &trans      &trans  &trans  &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                      &trans      &trans                  &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &trans     &trans  &trans  &trans             &trans  &kp TAB    &trans      &trans  &trans  &trans          &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &trans  &trans  &trans  &trans     &trans                                            &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0     &trans                                            &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &kp MINUS  &trans      &trans  &trans     &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                      &trans      &trans                     &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &trans  &trans  &trans             &trans  &kp TAB    &trans      &trans  &kp ENTER  &trans          &trans              &trans              &trans             &trans             &trans
             >;
         };
 
