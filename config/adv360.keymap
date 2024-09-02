@@ -208,21 +208,21 @@
 
         lnav {
             bindings = <
-&trans  &trans             &trans             &trans              &trans              &trans  &trans                                          &trans  &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &trans             &trans             &trans              &trans              &trans  &trans                                          &trans  &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans   &trans      &trans  &trans     &trans  &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &trans             &trans             &trans              &trans              &trans                   &trans      &trans                     &trans  &trans    &trans    &trans        &trans     &trans
-&trans  &trans             &trans             &trans              &trans                      &trans  &kp TAB  &trans      &trans  &kp ENTER  &trans          &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans  &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans  &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans             &trans             &trans              &trans              &trans                  &trans      &trans                  &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans                      &trans  &trans  &trans      &trans  &trans  &trans          &trans    &trans    &trans        &trans     &trans
             >;
         };
 
         lnum {
             bindings = <
-&trans  &trans     &trans  &trans  &trans  &trans     &trans                                            &trans  &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0     &trans                                            &trans  &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &kp MINUS  &trans      &trans  &trans     &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                      &trans      &trans                     &trans  &trans              &trans              &trans             &trans             &trans
-&trans  &trans     &trans  &trans  &trans             &trans  &kp TAB    &trans      &trans  &kp ENTER  &trans          &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &trans  &trans  &trans  &trans     &trans                                         &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0     &trans                                         &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &kp MINUS  &trans      &trans  &trans  &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                      &trans      &trans                  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans     &trans  &trans  &trans             &trans  &trans     &trans      &trans  &trans  &trans          &trans              &trans              &trans             &trans             &trans
             >;
         };
 
