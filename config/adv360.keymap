@@ -159,6 +159,26 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        ht_layer: ht_layer {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_LAYER";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            retro-tap;
+        };
+
+        ht_layer_del_bspc: ht_layer_del_bspc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_LAYER_DEL_BSPC";
+            bindings = <&mo>, <&mm_del_bspc>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            retro-tap;
+        };
     };
 };
 
@@ -168,11 +188,11 @@
 
         lbase {
             bindings = <
-&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                      &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
-&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                              &kp RPAR           &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
-&td_caps_lsft  &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC          &sl 4    &sl 3      &sl 6  &sl 5    &kp RBRC           &kp D         &kp H     &kp T     &kp N         &kp S      &td_cword_rsft
-&kp ESCAPE     &kp FSLH   &kp Q      &kp J    &kp K   &kp X                              &none      &none                              &kp B         &kp M     &kp W     &kp V         &kp Z      &key_repeat
-&mo 2          &msdquots  &brckts    &pars    &brcs           &kp SPACE         &kp TAB  &sl 8      &sl 7  &kp RET  &mm_del_bspc                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
+&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                                       &kp RIGHT_BRACKET       &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
+&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                               &kp RPAR                &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
+&td_caps_lsft  &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC           &sl 3            &sl 8      &sl 6  &sl 3            &kp RBRC                &kp D         &kp H     &kp T     &kp N         &kp S      &td_cword_rsft
+&kp ESCAPE     &kp FSLH   &kp Q      &kp J    &kp K   &kp X                                       &none      &none                                           &kp B         &kp M     &kp W     &kp V         &kp Z      &key_repeat
+&mo 2          &msdquots  &brckts    &pars    &brcs           &ht_layer 4 SPACE  &ht_layer 4 TAB  &none      &none  &ht_layer 7 RET  &ht_layer_del_bspc 5 0                &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
             >;
         };
 
