@@ -131,8 +131,10 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <100>;
+            tapping-term-ms = <180>;
             retro-tap;
+            hold-while-undecided;
+            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75 37>;
         };
 
         bspc_del: bspc_del {
@@ -198,6 +200,38 @@
             hold-while-undecided;
             retro-tap;
         };
+
+        lsft_caps_td: lsft_caps_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LSFT_CAPS_TD";
+            #binding-cells = <0>;
+            bindings = <&sticky_shift LSHFT>, <&kp CAPSLOCK>;
+
+            tapping-term-ms = <120>;
+        };
+
+        rsft_cword_td: rsft_cword_td {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RSFT_CWORD_TD";
+            #binding-cells = <0>;
+            bindings = <&sticky_shift RSHFT>, <&caps_word>;
+
+            tapping-term-ms = <120>;
+        };
+
+        repeat_ctrl: repeat_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "REPEAT_CTRL";
+            bindings = <&kp>, <&key_repeat>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <100>;
+            tapping-term-ms = <180>;
+            hold-while-undecided;
+            retro-tap;
+            flavor = "hold-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
+        };
     };
 };
 
@@ -207,11 +241,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE     &kp N1    &kp N2     &kp N3     &kp N4               &kp N5  &kp LEFT_BRACKET                                                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7               &kp N8     &kp N9    &kp N0    &kp MINUS
-&kp DQT       &kp SQT   &kp COMMA  &kp DOT    &kp P                &kp Y   &kp LPAR                                                                          &kp RPAR           &kp F         &kp G                &kp C      &kp R     &kp L     &kp EQUAL
-&kp SEMI      &kp A     &kp O      &kp E      &kp U                &kp I   &kp LBRC          &kp ESC         &vim_save_file      &version  &kp DEL           &kp RBRC           &kp D         &kp H                &kp T      &kp N     &kp S     &key_repeat
-&kp CAPSLOCK  &kp FSLH  &kp Q      &kp J      &kp K                &kp X                                     &lnav               &lnum                                          &kp B         &kp M                &kp W      &kp V     &kp Z     &caps_word
-&mo 6         &sk LGUI  &sk LALT   &sk LCTRL  &sticky_shift LSHFT          &kp SPACE         &htlayer 2 TAB  &lfn                &lsym     &htlayer 3 ENTER  &kp BACKSPACE                    &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &to 1
+&kp GRAVE            &kp N1    &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
+&kp DQT              &kp SQT   &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                                          &kp RPAR           &kp F         &kp G   &kp C   &kp R   &kp L   &kp EQUAL
+&esc_ctrl LCTRL ESC  &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC          &kp ESC         &vim_save_file      &version  &kp DEL           &kp RBRC           &kp D         &kp H   &kp T   &kp N   &kp S   &repeat_ctrl RCTRL 0
+&lsft_caps_td        &kp FSLH  &kp Q      &kp J    &kp K   &kp X                                     &none               &none                                          &kp B         &kp M   &kp W   &kp V   &kp Z   &rsft_cword_td
+&mo 6                &none     &none      &none    &none           &kp SPACE         &htlayer 2 TAB  &none               &none     &htlayer 3 ENTER  &kp BACKSPACE                    &none   &none   &none   &none   &to 1
             >;
         };
 
