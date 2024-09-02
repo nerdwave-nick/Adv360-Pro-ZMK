@@ -21,10 +21,6 @@
 #define HRM_T hrm RCTRL T
 #define HRM_H hrm_i RSHFT H
 
-&sk { quick-release; };
-
-&sl { ignore-modifiers; };
-
 / {
     macros {
         bt_0: bt_0 {
@@ -69,168 +65,81 @@
             label = "QOT";
         };
 
-        version: version {
+        brckts: brckts {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp D &kp V &kp O &kp R &kp A &kp K &kp SPACE &kp N &kp E &kp W &kp SPACE &kp MINUS &kp SPACE &kp N1 &kp DOT &kp N1 &kp DOT &kp N4>;
-            label = "VERSION";
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+            label = "BRCKTS";
         };
 
-        vim_save_file: vim_save_file {
+        pars: par {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp ESCAPE &kp COLON &kp W &kp ENTER>;
-            label = "VIM_SAVE_FILE";
+            bindings = <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>;
+            label = "PAR";
+        };
+
+        brcs: brcs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RBRC &kp LEFT>;
+            label = "BRCS";
+        };
+
+        squot: squot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp SQT &kp DQT &kp LEFT>;
+            label = "SQUOT";
         };
     };
 };
 
 / {
     behaviors {
-        hrm_i: hrm_i {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_I";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        hrm: hrm {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            require-prior-idle-ms = <100>;
-            bindings = <&kp>, <&kp>;
-        };
-
-        ltp: ltp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LTP";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
-        };
-
-        tdcaps: tdcaps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TDCAPS";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&caps_word>, <&kp CAPS>;
-        };
-
-        esc_ctrl: esc_ctrl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "ESC_CTRL";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <180>;
-            retro-tap;
-            hold-while-undecided;
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 53 54 55 56 57 58 59 68 69 70 71 72 73 74 75 37>;
-        };
-
-        bspc_del: bspc_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BSPC_DEL";
-            bindings = <&kp BACKSPACE>, <&kp DELETE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
-        };
-
-        lnav: lnav {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LNAV";
-            #binding-cells = <0>;
-            bindings = <&mo 2>, <&tog 2>;
-
-            tapping-term-ms = <150>;
-        };
-
-        lfn: lfn {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LFN";
-            #binding-cells = <0>;
-            tapping-term-ms = <150>;
-            bindings = <&mo 5>, <&tog 5>;
-        };
-
-        lnum: lnum {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LNUM";
-            #binding-cells = <0>;
-            bindings = <&sl 3>, <&tog 3>;
-
-            tapping-term-ms = <150>;
-        };
-
-        lsym: lsym {
-            compatible = "zmk,behavior-tap-dance";
-            label = "LSYM";
-            #binding-cells = <0>;
-            bindings = <&sl 4>, <&tog 4>;
-        };
-
-        sticky_shift: sticky_shift {
+        sticky_imqr: sticky_imqr {
             compatible = "zmk,behavior-sticky-key";
-            label = "STICKY_SHIFT";
+            label = "STICKY_IMQR";
             bindings = <&kp>;
             #binding-cells = <1>;
-            quick-release;
             release-after-ms = <1000>;
+            quick-release;
             ignore-modifiers;
         };
 
-        htlayer: htlayer {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HTLAYER";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            hold-while-undecided;
-            retro-tap;
-        };
-
-        lsft_caps_td: lsft_caps_td {
+        td_caps_lsft: td_caps_lsft {
             compatible = "zmk,behavior-tap-dance";
-            label = "LSFT_CAPS_TD";
+            label = "TD_CAPS_LSFT";
             #binding-cells = <0>;
-            bindings = <&sticky_shift LSHFT>, <&kp CAPSLOCK>;
+            bindings = <&sticky_imqr LSHFT>, <&kp CAPSLOCK>;
 
-            tapping-term-ms = <120>;
+            tapping-term-ms = <200>;
         };
 
-        rsft_cword_td: rsft_cword_td {
+        td_cword_rsft: td_cword_rsft {
             compatible = "zmk,behavior-tap-dance";
-            label = "RSFT_CWORD_TD";
+            label = "TD_CWORD_RSFT";
             #binding-cells = <0>;
-            bindings = <&sticky_shift RSHFT>, <&caps_word>;
-
-            tapping-term-ms = <120>;
+            bindings = <&sticky_imqr RSHFT>, <&caps_word>;
         };
 
-        repeat_ctrl: repeat_ctrl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "REPEAT_CTRL";
-            bindings = <&kp>, <&key_repeat>;
+        mm_del_bspc: mm_del_bspc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DEL_BSPC";
+            bindings = <&kp BSPC>, <&kp DEL>;
 
-            #binding-cells = <2>;
-            quick-tap-ms = <100>;
-            tapping-term-ms = <180>;
-            hold-while-undecided;
-            retro-tap;
-            flavor = "hold-preferred";
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_RALT|MOD_RGUI|MOD_LGUI|MOD_LALT)>;
+        };
+
+        msdquots: msdquots {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MSDQUOTS";
+            bindings = <&squot>, <&qot>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 };
@@ -239,67 +148,27 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_Base {
+        lbase {
             bindings = <
-&kp GRAVE            &kp N1    &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
-&kp DQT              &kp SQT   &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                                          &kp RPAR           &kp F         &kp G   &kp C   &kp R   &kp L   &kp EQUAL
-&esc_ctrl LCTRL ESC  &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC          &sl 7           &vim_save_file      &version  &sl 7             &kp RBRC           &kp D         &kp H   &kp T   &kp N   &kp S   &repeat_ctrl RCTRL 0
-&lsft_caps_td        &kp FSLH  &kp Q      &kp J    &kp K   &kp X                                     &none               &none                                          &kp B         &kp M   &kp W   &kp V   &kp Z   &rsft_cword_td
-&mo 6                &none     &none      &none    &none           &kp SPACE         &htlayer 2 TAB  &none               &none     &htlayer 3 ENTER  &bspc_del                        &none   &none   &none   &none   &to 1
+&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
+&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                          &kp RPAR           &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
+&kp ESCAPE     &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC          &none  &none      &none  &sl 6  &kp RBRC           &kp D         &kp H     &kp T     &kp N         &kp S      &key_repeat
+&td_caps_lsft  &kp FSLH   &kp Q      &kp J    &kp K   &kp X                            &none      &none                            &kp B         &kp M     &kp W     &kp V         &kp Z      &td_cword_rsft
+&mo 2          &msdquots  &brckts    &pars    &brcs           &kp SPACE         &sl 4  &none      &sl 7  &sl 5  &mm_del_bspc                     &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
             >;
         };
 
-        layer_Gaming {
+        lgaming {
             bindings = <
 &kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
 &kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
 &kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
 &kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
-&mo 6   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
+&mo 2   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
-        layer_Nav {
-            bindings = <
-&none  &none     &none     &none      &none                &none  &none                                    &none  &none  &none     &none      &none      &none      &none
-&none  &none     &none     &none      &none                &none  &none                                    &none  &none  &none     &none      &none      &none      &none
-&none  &none     &none     &none      &none                &none  &none  &trans  &none       &none  &none  &none  &none  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &none
-&none  &none     &none     &none      &none                &none                 &none       &none                &none  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &none
-&none  &sk LGUI  &sk LALT  &sk LCTRL  &sticky_shift LSHFT         &none  &none   &tog 2      &none  &none  &none         &none     &none      &none      &none      &none
-            >;
-        };
-
-        layer_Num {
-            bindings = <
-&none  &none      &none   &none   &none   &none      &none                                              &none  &none  &none                &none      &none          &none     &none
-&none  &kp COMMA  &kp N7  &kp N8  &kp N9  &kp N0     &none                                              &none  &none  &none                &none      &none          &none     &none
-&none  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &none      &kp MINUS  &kp PLUS      &none   &none  &none  &none  &none                &none      &none          &none     &none
-&none  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                         &kp FSLH      &none                 &none  &none                &none      &none          &none     &sk RSHFT
-&none  &none      &none   &none   &none              &kp SPACE  &kp DOT    &kp STAR      &tog 3  &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RIGHT_ALT  &sk RGUI  &none
-            >;
-        };
-
-        layer_Sym {
-            bindings = <
-&none  &none      &none     &none      &none      &none     &none                                              &none  &none  &none                &none      &none     &none     &none
-&none  &kp LPAR   &kp AMPS  &kp STAR   &kp LPAR   &kp RPAR  &none                                              &none  &none  &none                &none      &none     &none     &none
-&none  &kp COLON  &kp DLLR  &kp PRCNT  &kp CARET  &kp PLUS  &none      &kp UNDER  &kp RBRC      &none   &none  &none  &none  &none                &none      &none     &none     &none
-&none  &kp TILDE  &kp EXCL  &kp AT     &kp HASH   &kp PIPE                        &kp LBRC      &tog 4                &none  &none                &none      &none     &none     &none
-&none  &none      &none     &none      &none                &kp SPACE  &kp LBKT   &kp RBKT      &none   &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
-            >;
-        };
-
-        layer_Fn {
-            bindings = <
-&none  &none  &kp F10  &kp F11  &kp F12  &none  &none                                   &none  &none  &none                &none      &none     &none     &none
-&none  &none  &kp F7   &kp F8   &kp F9   &none  &none                                   &none  &none  &none                &none      &none     &none     &none
-&none  &none  &kp F4   &kp F5   &kp F6   &none  &none  &none  &none       &none  &none  &none  &none  &none                &none      &none     &none     &none
-&none  &none  &kp F1   &kp F2   &kp F3   &none                &tog 5      &none                &none  &none                &none      &none     &none     &none
-&none  &none  &none    &none    &none           &none  &none  &none       &none  &none  &none         &sticky_shift RSHFT  &sk RCTRL  &sk RALT  &sk RGUI  &none
-            >;
-        };
-
-        layer_Magic {
+        lmagic {
             bindings = <
 &none        &none  &none  &none  &none                   &none  &none                                                   &none            &none  &none  &none  &none  &none  &none
 &none        &none  &none  &none  &none                   &none  &none                                                   &none            &none  &none  &none  &none  &none  &none
@@ -309,13 +178,53 @@
             >;
         };
 
-        layer_callum {
+        lmod {
             bindings = <
-&trans  &trans              &trans              &trans               &trans               &trans  &trans                                      &trans  &trans  &trans               &trans               &trans              &trans              &trans
-&trans  &trans              &trans              &trans               &trans               &trans  &trans                                      &trans  &trans  &trans               &trans               &trans              &trans              &trans
-&trans  &sticky_shift LGUI  &sticky_shift LALT  &sticky_shift LCTRL  &sticky_shift LSHFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &sticky_shift RSHFT  &sticky_shift RCTRL  &sticky_shift RALT  &sticky_shift RGUI  &trans
-&trans  &trans              &trans              &trans               &trans               &trans                  &trans      &trans                  &trans  &trans               &trans               &trans              &trans              &trans
-&trans  &trans              &trans              &trans               &trans                       &trans  &trans  &trans      &trans  &trans  &trans          &trans               &trans               &trans              &trans              &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
+&trans  &trans             &trans             &trans              &trans              &trans                  &trans      &trans                  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans             &trans             &trans              &trans                      &trans  &trans  &trans      &trans  &trans  &trans          &trans              &trans              &trans             &trans             &trans
+            >;
+        };
+
+        lnav {
+            bindings = <
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans     &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans              &trans  &trans                                      &trans     &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &sticky_imqr LGUI  &sticky_imqr LALT  &sticky_imqr LCTRL  &sticky_imqr LSHFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans  &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &trans             &trans             &trans              &trans              &trans                  &trans      &trans                     &trans  &trans    &trans    &trans        &trans     &trans
+&trans  &trans             &trans             &trans              &trans                      &trans  &trans  &trans      &trans  &trans  &kp ENTER          &trans    &trans    &trans        &trans     &trans
+            >;
+        };
+
+        lnum {
+            bindings = <
+&trans  &trans     &trans  &trans  &trans  &trans     &trans                                          &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans     &kp N7  &kp N8  &kp N9  &kp N0     &trans                                          &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans   &kp MINUS  &trans      &trans  &trans  &trans  &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                       &trans      &trans                  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans     &trans  &trans  &trans             &kp TAB  &trans     &trans      &trans  &trans  &trans          &trans     &trans     &trans    &trans    &trans
+            >;
+        };
+
+        lfun {
+            bindings = <
+&trans  &trans  &kp F10  &kp F11  &kp F12  &trans  &trans                                      &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans  &kp F7   &kp F8   &kp F9   &trans  &trans                                      &trans  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans  &kp F4   &kp F5   &kp F6   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &sticky_imqr RSHFT  &sticky_imqr RCTRL  &sticky_imqr RALT  &sticky_imqr RGUI  &trans
+&trans  &trans  &kp F1   &kp F2   &kp F3   &trans                  &trans      &trans                  &trans  &trans              &trans              &trans             &trans             &trans
+&trans  &trans  &trans   &trans   &trans           &trans  &trans  &trans      &trans  &trans  &trans          &trans              &trans              &trans             &trans             &trans
+            >;
+        };
+
+        lsym {
+            bindings = <
+&trans  &trans         &trans        &trans         &trans         &trans        &trans                                             &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans         &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)   &kp LS(RPAR)  &trans                                             &trans  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &kp LS(COLON)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(PLUS)  &trans  &kp LS(UNDER)  &trans      &trans  &trans  &trans  &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
+&trans  &kp LS(TILDE)  &kp LS(EXCL)  &kp LS(AT)     &kp LS(POUND)  &kp LS(PIPE)                         &trans      &trans                  &trans  &trans     &trans     &trans    &trans    &trans
+&trans  &trans         &trans        &trans         &trans                       &trans  &trans         &trans      &trans  &trans  &trans          &trans     &trans     &trans    &trans    &trans
             >;
         };
     };
