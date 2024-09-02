@@ -190,11 +190,11 @@
 
         lbase {
             bindings = <
-&kp GRAVE      &kp N1     &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                                       &kp RIGHT_BRACKET       &kp NUMBER_6  &kp N7    &kp N8    &kp N9        &kp N0     &kp MINUS
-&kp DQT        &kp SQT    &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                               &kp RPAR                &kp F         &kp G     &kp C     &kp R         &kp L      &kp EQUAL
-&td_caps_lsft  &kp A      &kp O      &kp E    &kp U   &kp I   &kp LBRC           &sl 3            &sl 8      &sl 6  &sl 3            &kp RBRC                &kp D         &kp H     &kp T     &kp N         &kp S      &td_cword_rsft
-&kp ESCAPE     &kp FSLH   &kp Q      &kp J    &kp K   &kp X                                       &none      &none                                           &kp B         &kp M     &kp W     &kp V         &kp Z      &key_repeat
-&mo 2          &msdquots  &brckts    &pars    &brcs           &ht_layer 4 SPACE  &ht_layer 4 TAB  &none      &none  &ht_layer 7 RET  &ht_layer_del_bspc 5 0                &kp LEFT  &kp DOWN  &kp UP_ARROW  &kp RIGHT  &to 1
+&kp GRAVE           &kp N1    &kp N2     &kp N3   &kp N4         &kp N5  &kp LEFT_BRACKET                                                       &kp RIGHT_BRACKET       &kp NUMBER_6  &kp N7          &kp N8  &kp N9  &kp N0             &kp MINUS
+&kp DQT             &kp SQT   &kp COMMA  &kp DOT  &kp P          &kp Y   &kp LPAR                                                               &kp RPAR                &kp F         &kp G           &kp C   &kp R   &kp L              &kp EQUAL
+&kp ESCAPE          &kp A     &kp O      &kp E    &kp U          &kp I   &kp LBRC           &sl 3            &sl 8      &sl 6  &sl 3            &kp RBRC                &kp D         &kp H           &kp T   &kp N   &kp S              &key_repeat
+&sticky_imqr LCTRL  &kp FSLH  &kp Q      &kp J    &kp K          &kp X                                       &none      &none                                           &kp B         &kp M           &kp W   &kp V   &kp Z              &sticky_imqr RCTRL
+&mo 2               &brckts   &pars      &brcs    &td_caps_lsft          &ht_layer 4 SPACE  &ht_layer 4 TAB  &none      &none  &ht_layer 7 RET  &ht_layer_del_bspc 5 0                &td_cword_rsft  &squot  &qot    &sticky_imqr RGUI  &to 1
             >;
         };
 
