@@ -61,7 +61,7 @@
         qot: qot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp DQT &kp DQT &kp LEFT &kp LSHFT>;
+            bindings = <&kp DQT &kp DQT &kp LEFT>;
             label = "QOT";
         };
 
@@ -131,33 +131,6 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_RCTL|MOD_RALT|MOD_RGUI|MOD_LGUI|MOD_LALT)>;
-        };
-
-        msdquots: msdquots {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MSDQUOTS";
-            bindings = <&squot>, <&qot>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mmtab: mmtab {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MMTAB";
-            bindings = <&sl 4>, <&kp TAB>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mmret: mmret {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MMRET";
-            bindings = <&sl 5>, <&kp RET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         ht_layer: ht_layer {
