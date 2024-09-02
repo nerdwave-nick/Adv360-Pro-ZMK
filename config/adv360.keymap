@@ -243,9 +243,9 @@
             bindings = <
 &kp GRAVE            &kp N1    &kp N2     &kp N3   &kp N4  &kp N5  &kp LEFT_BRACKET                                                                  &kp RIGHT_BRACKET  &kp NUMBER_6  &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS
 &kp DQT              &kp SQT   &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                                          &kp RPAR           &kp F         &kp G   &kp C   &kp R   &kp L   &kp EQUAL
-&esc_ctrl LCTRL ESC  &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC          &kp ESC         &vim_save_file      &version  &kp DEL           &kp RBRC           &kp D         &kp H   &kp T   &kp N   &kp S   &repeat_ctrl RCTRL 0
+&esc_ctrl LCTRL ESC  &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC          &sl 7           &vim_save_file      &version  &sl 7             &kp RBRC           &kp D         &kp H   &kp T   &kp N   &kp S   &repeat_ctrl RCTRL 0
 &lsft_caps_td        &kp FSLH  &kp Q      &kp J    &kp K   &kp X                                     &none               &none                                          &kp B         &kp M   &kp W   &kp V   &kp Z   &rsft_cword_td
-&mo 6                &none     &none      &none    &none           &kp SPACE         &htlayer 2 TAB  &none               &none     &htlayer 3 ENTER  &kp BACKSPACE                    &none   &none   &none   &none   &to 1
+&mo 6                &none     &none      &none    &none           &kp SPACE         &htlayer 2 TAB  &none               &none     &htlayer 3 ENTER  &bspc_del                        &none   &none   &none   &none   &to 1
             >;
         };
 
@@ -306,6 +306,16 @@
 &bootloader  &none  &none  &none  &none                   &none  &none  &bt_2  &bt_3             &bt BT_CLR  &none       &none            &none  &none  &none  &none  &none  &bootloader
 &none        &none  &none  &none  &none                   &none                &bt_4             &bl BL_INC                               &none  &none  &none  &none  &none  &none
 &none        &none  &none  &none  &rgb_ug RGB_MEFS_CMD 5         &bt_0  &bt_1  &out OUT_USB      &bl BL_DEC  &bl BL_TOG  &rgb_ug RGB_TOG         &none  &none  &none  &none  &none
+            >;
+        };
+
+        layer_callum {
+            bindings = <
+&trans  &trans              &trans              &trans               &trans               &trans  &trans                                      &trans  &trans  &trans               &trans               &trans              &trans              &trans
+&trans  &trans              &trans              &trans               &trans               &trans  &trans                                      &trans  &trans  &trans               &trans               &trans              &trans              &trans
+&trans  &sticky_shift LGUI  &sticky_shift LALT  &sticky_shift LCTRL  &sticky_shift LSHFT  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &sticky_shift RSHFT  &sticky_shift RCTRL  &sticky_shift RALT  &sticky_shift RGUI  &trans
+&trans  &trans              &trans              &trans               &trans               &trans                  &trans      &trans                  &trans  &trans               &trans               &trans              &trans              &trans
+&trans  &trans              &trans              &trans               &trans                       &trans  &trans  &trans      &trans  &trans  &trans          &trans               &trans               &trans              &trans              &trans
             >;
         };
     };
