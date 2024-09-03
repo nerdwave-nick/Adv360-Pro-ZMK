@@ -92,6 +92,34 @@
             bindings = <&kp SQT &kp SQT &kp LEFT>;
             label = "SQUOT";
         };
+
+        vim_save: vim_save {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp COLON &kp W &kp RET>;
+            label = "VIM_SAVE";
+        };
+
+        version: version {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp MINUS &kp D &kp V &kp O &kp R &kp A &kp K &kp MINUS &kp C &kp A &kp L &kp L &kp U &kp M &kp MINUS &kp S &kp T &kp Y &kp L &kp E &kp SPACE &kp V &kp N1 &kp DOT &kp N0 &kp DOT &kp N1>;
+            label = "VERSION";
+        };
+
+        vim_oil: vim_oil {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp MINUS>;
+            label = "VIM_OIL";
+        };
+
+        angle_brackets: angle_brackets {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT_ARROW>;
+            label = "ANGLE_BRACKETS";
+        };
     };
 };
 
@@ -163,11 +191,11 @@
 
         lbase {
             bindings = <
-&kp GRAVE           &kp N1    &kp N2     &kp N3   &kp N4         &kp N5  &kp LEFT_BRACKET                                                       &kp RIGHT_BRACKET       &kp NUMBER_6  &kp N7          &kp N8  &kp N9  &kp N0             &kp MINUS
-&kp DQT             &kp SQT   &kp COMMA  &kp DOT  &kp P          &kp Y   &kp LPAR                                                               &kp RPAR                &kp F         &kp G           &kp C   &kp R   &kp L              &kp EQUAL
-&kp ESCAPE          &kp A     &kp O      &kp E    &kp U          &kp I   &kp LBRC           &sl 3            &sl 8      &sl 6  &sl 3            &kp RBRC                &kp D         &kp H           &kp T   &kp N   &kp S              &key_repeat
-&sticky_imqr LCTRL  &kp FSLH  &kp Q      &kp J    &kp K          &kp X                                       &none      &none                                           &kp B         &kp M           &kp W   &kp V   &kp Z              &sticky_imqr RCTRL
-&mo 2               &brckts   &pars      &brcs    &td_caps_lsft          &ht_layer 4 SPACE  &ht_layer 4 TAB  &none      &none  &ht_layer 7 RET  &ht_layer_del_bspc 5 0                &td_cword_rsft  &squot  &qot    &sticky_imqr RGUI  &to 1
+&kp GRAVE   &kp N1    &kp N2     &kp N3   &kp N4         &kp N5  &kp LEFT_BRACKET                                                                     &kp RIGHT_BRACKET       &kp NUMBER_6  &kp N7          &kp N8  &kp N9  &kp N0             &kp MINUS
+&kp DQT     &kp SQT   &kp COMMA  &kp DOT  &kp P          &kp Y   &kp LPAR                                                                             &kp RPAR                &kp F         &kp G           &kp C   &kp R   &kp L              &kp EQUAL
+&kp ESCAPE  &kp A     &kp O      &kp E    &kp U          &kp I   &kp LBRC           &sl 3            &sl 8          &sl 6            &sl 3            &kp RBRC                &kp D         &kp H           &kp T   &kp N   &kp S              &key_repeat
+&kp LCTRL   &kp FSLH  &kp Q      &kp J    &kp K          &kp X                                       &version       &vim_oil                                                  &kp B         &kp M           &kp W   &kp V   &kp Z              &sticky_imqr RCTRL
+&mo 2       &brckts   &pars      &brcs    &td_caps_lsft          &ht_layer 4 SPACE  &ht_layer 4 TAB  &vim_save      &angle_brackets  &ht_layer 7 RET  &ht_layer_del_bspc 5 0                &td_cword_rsft  &squot  &qot    &sticky_imqr RGUI  &to 1
             >;
         };
 
