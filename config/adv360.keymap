@@ -249,6 +249,46 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
+
+        pipe_bslsh: pipe_bslsh {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PIPE_BSLSH";
+            bindings = <&kp PIPE>, <&kp BSLH>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        dllr_tilde: dllr_tilde {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DLLR_TILDE";
+            bindings = <&kp DOLLAR>, <&kp TILDE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        caret_at: caret_at {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CARET_AT";
+            bindings = <&kp CARET>, <&kp AT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        bt_pound: bt_pound {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BT_POUND";
+            bindings = <&kp GRAVE>, <&kp POUND>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
     };
 };
 
@@ -258,11 +298,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE  &plus_1   &lbrk_2    &lbrc_3  &lpar_4  &amp_5  &exc_perc                                                                     &none      &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &kp MINUS
-&kp TAB    &kp SQT   &kp COMMA  &kp DOT  &kp P    &kp Y   &none                                                                         &none      &kp F  &kp G     &kp C     &kp R    &kp L      &none
-&kp ESC    &kp A     &kp O      &kp E    &kp U    &kp I   &none      &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &none      &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
-&navtd     &kp FSLH  &kp Q      &kp J    &kp K    &kp X                         &kp LGUI               &kp RGUI                                    &kp B  &kp M     &kp W     &kp V    &kp Z      &symnum
-&mo 2      &none     &none      &none    &none            &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del         &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
+&dllr_tilde  &plus_1   &lbrk_2    &lbrc_3  &lpar_4  &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
+&kp TAB      &kp SQT   &kp COMMA  &kp DOT  &kp P    &kp Y   &tog 3                                                                        &tog 5       &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
+&kp ESC      &kp A     &kp O      &kp E    &kp U    &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
+&navtd       &kp FSLH  &kp Q      &kp J    &kp K    &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &symnum
+&mo 2        &none     &none      &none    &none            &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
             >;
         };
 
