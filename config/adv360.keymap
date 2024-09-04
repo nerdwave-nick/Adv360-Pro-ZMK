@@ -254,6 +254,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
+
+        tdcword: tdcword {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDCWORD";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk RSHFT>, <&caps_word>;
+        };
     };
 };
 
@@ -265,9 +273,9 @@
             bindings = <
 &dllr_tilde  &plus_1   &lbrk_2    &lbrc_3      &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
 &kp TAB      &kp SQT   &kp COMMA  &kp DOT      &kp P     &kp Y   &tog 1                                                                        &tog 2       &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
-&kp ESC      &kp A     &kp O      &kp E        &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
+&kp ESC      &kp A     &kp O      &kp E        &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
 &mo 1        &kp FSLH  &kp Q      &kp J        &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 2
-&mo 6        &tog 4    &sl 3      &key_repeat  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &sl 4
+&mo 6        &tog 4    &sl 3      &key_repeat  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &sl 4
             >;
         };
 
