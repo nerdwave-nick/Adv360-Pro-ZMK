@@ -123,6 +123,122 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
+
+        navtd: navtd {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NAVTD";
+            #binding-cells = <0>;
+            bindings = <&mo 3>, <&tog 3>;
+
+            tapping-term-ms = <200>;
+        };
+
+        symnum: symnum {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SYMNUM";
+            #binding-cells = <0>;
+            bindings = <&mo 5>, <&mo 4>;
+        };
+
+        plus_1: plus_1 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "PLUS_1";
+            bindings = <&kp PLUS>, <&kp NUMBER_1>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        lbrk_2: lbrk_2 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBRK_2";
+            bindings = <&kp LEFT_BRACKET>, <&kp NUMBER_2>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        lbrc_3: lbrc_3 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LBRC_3";
+            bindings = <&kp LBRC>, <&kp NUMBER_3>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        lpar_4: lpar_4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LPAR_4";
+            bindings = <&kp LPAR>, <&kp NUMBER_4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        amp_5: amp_5 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AMP_5";
+            bindings = <&kp AMPS>, <&kp NUMBER_5>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        eq_6: eq_6 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EQ_6";
+            bindings = <&kp EQUAL>, <&kp NUMBER_6>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        rpar_7: rpar_7 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RPAR_7";
+            bindings = <&kp RPAR>, <&kp NUMBER_7>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        rbrc_8: rbrc_8 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RBRC_8";
+            bindings = <&kp RBRC>, <&kp NUMBER_8>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        rbrk_9: rbrk_9 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RBRK_9";
+            bindings = <&kp RIGHT_BRACKET>, <&kp N9>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
+
+        ast_0: ast_0 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "AST_0";
+            bindings = <&kp ASTRK>, <&kp NUMBER_0>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
     };
 };
 
@@ -132,11 +248,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE   &kp N1     &kp N2     &kp N3    &kp N4    &kp N5  &kp LBKT                                                                      &kp RBKT   &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp MINUS
-&kp TAB     &kp SQT    &kp COMMA  &kp DOT   &kp P     &kp Y   &kp LPAR                                                                      &kp RPAR   &kp F   &kp G     &kp C     &kp R   &kp L      &kp EQUAL
-&kp ESC     &kp A      &kp O      &kp E     &kp U     &kp I   &kp LBRC   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp RBRC   &kp D   &kp H     &kp T     &kp N   &kp S      &kp SEMI
-&kp ESCAPE  &kp FSLH   &kp Q      &kp J     &kp K     &kp X                         &kp LGUI               &kp RGUI                                    &kp B   &kp M     &kp W     &kp V   &kp Z      &none
-&mo 2       &kp GRAVE  &kp CAPS   &kp BSLH  &kp RBKT          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &to 1
+&kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4  &kp N5  &kp LBKT                                                                      &kp RBKT   &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp MINUS
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                                      &kp RPAR   &kp F   &kp G     &kp C     &kp R   &kp L      &kp EQUAL
+&kp ESC    &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp RBRC   &kp D   &kp H     &kp T     &kp N   &kp S      &kp SEMI
+&navtd     &kp FSLH  &kp Q      &kp J    &kp K   &kp X                         &kp LGUI               &kp RGUI                                    &kp B   &kp M     &kp W     &kp V   &kp Z      &symnum
+&mo 2      &none     &none      &none    &none           &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &to 1
             >;
         };
 
@@ -157,6 +273,36 @@
 &bootloader  &none  &none  &none  &none                   &none  &none  &bt_2  &bt_3             &bt BT_CLR  &none       &none            &none  &none  &none  &none  &none  &bootloader
 &none        &none  &none  &none  &none                   &none                &bt_4             &bl BL_INC                               &none  &none  &none  &none  &none  &none
 &none        &none  &none  &none  &rgb_ug RGB_MEFS_CMD 5         &bt_0  &bt_1  &out OUT_USB      &bl BL_DEC  &bl BL_TOG  &rgb_ug RGB_TOG         &none  &none  &none  &none  &none
+            >;
+        };
+
+        lnav {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans    &trans    &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans    &trans    &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans    &trans    &trans  &trans     &trans
+&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans    &trans    &trans  &trans     &trans
+            >;
+        };
+
+        lnum {
+            bindings = <
+&trans  &trans     &trans  &trans  &trans  &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                   &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans     &trans  &trans  &trans             &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        lsym {
+            bindings = <
+&trans  &trans          &trans           &trans     &trans     &trans    &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp UNDERSCORE  &kp AMPS         &kp ASTRK  &kp LPAR   &kp RPAR  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp COLON       &kp DOLLAR       &kp PRCNT  &kp CARET  &kp PLUS  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp TILDE       &kp EXCLAMATION  &kp AT     &kp POUND  &kp PIPE                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans          &trans           &trans     &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
