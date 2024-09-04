@@ -239,6 +239,16 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
             keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
         };
+
+        exc_perc: exc_perc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "EXC_PERC";
+            bindings = <&kp EXCL>, <&kp PERCENT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RALT|MOD_RGUI)>;
+        };
     };
 };
 
@@ -248,11 +258,11 @@
 
         layer_Base {
             bindings = <
-&kp GRAVE  &kp N1    &kp N2     &kp N3   &kp N4  &kp N5  &kp LBKT                                                                      &kp RBKT   &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp MINUS
-&kp TAB    &kp SQT   &kp COMMA  &kp DOT  &kp P   &kp Y   &kp LPAR                                                                      &kp RPAR   &kp F   &kp G     &kp C     &kp R   &kp L      &kp EQUAL
-&kp ESC    &kp A     &kp O      &kp E    &kp U   &kp I   &kp LBRC   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp RBRC   &kp D   &kp H     &kp T     &kp N   &kp S      &kp SEMI
-&navtd     &kp FSLH  &kp Q      &kp J    &kp K   &kp X                         &kp LGUI               &kp RGUI                                    &kp B   &kp M     &kp W     &kp V   &kp Z      &symnum
-&mo 2      &none     &none      &none    &none           &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &to 1
+&kp GRAVE  &plus_1   &lbrk_2    &lbrc_3  &lpar_4  &amp_5  &exc_perc                                                                     &none      &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &kp MINUS
+&kp TAB    &kp SQT   &kp COMMA  &kp DOT  &kp P    &kp Y   &none                                                                         &none      &kp F  &kp G     &kp C     &kp R    &kp L      &none
+&kp ESC    &kp A     &kp O      &kp E    &kp U    &kp I   &none      &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &none      &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
+&navtd     &kp FSLH  &kp Q      &kp J    &kp K    &kp X                         &kp LGUI               &kp RGUI                                    &kp B  &kp M     &kp W     &kp V    &kp Z      &symnum
+&mo 2      &none     &none      &none    &none            &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del         &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
             >;
         };
 
