@@ -23,8 +23,6 @@
 
 &sk { quick-release; };
 
-&caps_word { continue-list = <UNDERSCORE BACKSPACE DELETE MINUS>; };
-
 / {
     macros {
         bt_0: bt_0 {
@@ -108,56 +106,12 @@
 
 / {
     behaviors {
-        ltp: ltp {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LTP";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-            bindings = <&mo>, <&kp>;
-        };
-
         tdcaps: tdcaps {
             compatible = "zmk,behavior-tap-dance";
             label = "TDCAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sk LSHFT>, <&kp CAPS>;
-        };
-
-        hrml: hrml {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRML";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <180>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 38 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75 37 38 53 68 69 70 52 65 66 67 35 36>;
-        };
-
-        hrmr: hrmr {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRMR";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <180>;
-            flavor = "balanced";
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 35 36 46 47 48 49 50 51 52 60 61 62 63 64 65 66 67 37 38 53 68 69 70>;
-        };
-
-        tdcword: tdcword {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TDCWORD";
-            #binding-cells = <0>;
-            bindings = <&sk RSHFT>, <&caps_word>;
         };
 
         bspc_del: bspc_del {
@@ -181,8 +135,8 @@
 &kp GRAVE   &kp N1     &kp N2     &kp N3    &kp N4    &kp N5  &kp LBKT                                                                      &kp RBKT   &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp MINUS
 &kp TAB     &kp SQT    &kp COMMA  &kp DOT   &kp P     &kp Y   &kp LPAR                                                                      &kp RPAR   &kp F   &kp G     &kp C     &kp R   &kp L      &kp EQUAL
 &kp ESC     &kp A      &kp O      &kp E     &kp U     &kp I   &kp LBRC   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp RBRC   &kp D   &kp H     &kp T     &kp N   &kp S      &kp SEMI
-&kp ESCAPE  &kp FSLH   &kp Q      &kp J     &kp K     &kp X                         &kp LGUI               &kp RGUI                                    &kp B   &kp M     &kp W     &kp V   &kp Z      &kp RSHFT
-&mo 2       &kp GRAVE  &kp CAPS   &kp BSLH  &kp RBKT          &kp SPACE  &sk LSHFT  &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &to 1
+&kp ESCAPE  &kp FSLH   &kp Q      &kp J     &kp K     &kp X                         &kp LGUI               &kp RGUI                                    &kp B   &kp M     &kp W     &kp V   &kp Z      &none
+&mo 2       &kp GRAVE  &kp CAPS   &kp BSLH  &kp RBKT          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del          &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &to 1
             >;
         };
 
