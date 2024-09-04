@@ -128,7 +128,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NAVTD";
             #binding-cells = <0>;
-            bindings = <&mo 3>, <&tog 3>;
+            bindings = <&mo 2>, <&tog 2>;
 
             tapping-term-ms = <200>;
         };
@@ -137,7 +137,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SYMNUM";
             #binding-cells = <0>;
-            bindings = <&mo 5>, <&mo 4>;
+            bindings = <&mo 4>, <&mo 3>;
         };
 
         plus_1: plus_1 {
@@ -296,27 +296,17 @@
     keymap {
         compatible = "zmk,keymap";
 
-        layer_Base {
+        lbase {
             bindings = <
-&dllr_tilde  &plus_1   &lbrk_2    &lbrc_3  &lpar_4  &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
-&kp TAB      &kp SQT   &kp COMMA  &kp DOT  &kp P    &kp Y   &tog 3                                                                        &tog 5       &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
-&kp ESC      &kp A     &kp O      &kp E    &kp U    &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
-&navtd       &kp FSLH  &kp Q      &kp J    &kp K    &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &symnum
-&mo 2        &none     &none      &none    &none            &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
+&dllr_tilde  &plus_1   &lbrk_2    &lbrc_3      &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
+&kp TAB      &kp SQT   &kp COMMA  &kp DOT      &kp P     &kp Y   &tog 2                                                                        &tog 3       &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
+&kp ESC      &kp A     &kp O      &kp E        &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp SEMI
+&mo 2        &kp FSLH  &kp Q      &kp J        &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 3
+&mo 1        &none     &none      &key_repeat  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp ENTER  &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &mo 4
             >;
         };
 
-        layer_Gaming {
-            bindings = <
-&kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
-&kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
-&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
-&kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
-&mo 2   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
-            >;
-        };
-
-        layer_Magic {
+        lmagic {
             bindings = <
 &none        &none  &none  &none  &none                   &none  &none                                                   &none            &none  &none  &none  &none  &none  &none
 &none        &none  &none  &none  &none                   &none  &none                                                   &none            &none  &none  &none  &none  &none  &none
@@ -354,6 +344,25 @@
 &trans  &kp TILDE       &kp EXCLAMATION  &kp AT     &kp POUND  &kp PIPE                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans          &trans           &trans     &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
+        };
+
+        lgaming {
+            bindings = <
+&kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
+&kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
+&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
+&kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
+&mo 1   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
+            >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        numnavgaming {
+            if-layers = <3 2>;
+            then-layer = <5>;
         };
     };
 };
