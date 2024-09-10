@@ -93,7 +93,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "NAVTD";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&tog 1>;
+            bindings = <&mo 0>, <&tog 0>;
 
             tapping-term-ms = <200>;
         };
@@ -102,7 +102,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SYMNUM";
             #binding-cells = <0>;
-            bindings = <&mo 4>, <&mo 2>;
+            bindings = <&mo 0>, <&mo 0>;
         };
 
         plus_1: plus_1 {
@@ -271,31 +271,11 @@
 
         lbase {
             bindings = <
-&dllr_tilde  &plus_1   &lbrk_2    &lbrc_3      &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
-&kp TAB      &kp SQT   &kp COMMA  &kp DOT      &kp P     &kp Y   &tog 1                                                                        &tog 2       &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
-&kp ESC      &kp A     &kp O      &kp E        &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
-&mo 1        &kp FSLH  &kp Q      &kp J        &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 2
-&mo 6        &tog 4    &sl 3      &key_repeat  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &sl 4
-            >;
-        };
-
-        lnav {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans    &trans    &trans  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                      &trans  &trans  &trans    &trans    &trans  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                  &trans  &trans    &trans    &trans  &trans     &trans
-&trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &trans  &trans          &trans    &trans    &trans  &trans     &trans
-            >;
-        };
-
-        lnum {
-            bindings = <
-&trans  &trans     &trans  &trans  &trans  &trans     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0     &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp SEMI   &kp N4  &kp N5  &kp N6  &kp EQUAL  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2  &kp N3  &kp BSLH                   &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans     &trans  &trans  &trans             &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&dllr_tilde  &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
+&kp TAB      &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                     &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
+&kp ESC      &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
+&kp ESC      &kp FSLH  &kp Q         &kp J      &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 1
+&mo 3        &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 2
             >;
         };
 
@@ -309,23 +289,13 @@
             >;
         };
 
-        lsym {
-            bindings = <
-&trans  &trans          &trans           &trans     &trans     &trans    &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp UNDERSCORE  &kp AMPS         &kp ASTRK  &kp LPAR   &kp RPAR  &trans                                      &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp COLON       &kp DOLLAR       &kp PRCNT  &kp CARET  &kp PLUS  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp TILDE       &kp EXCLAMATION  &kp AT     &kp POUND  &kp PIPE                  &trans      &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans           &trans     &trans               &trans  &trans  &trans      &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
-            >;
-        };
-
         lgaming {
             bindings = <
 &kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
 &kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
 &kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
 &kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
-&mo 6   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
+&mo 3   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
@@ -340,12 +310,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        numnavgaming {
-            if-layers = <2 1>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
