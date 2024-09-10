@@ -271,11 +271,11 @@
 
         lbase {
             bindings = <
-&dllr_tilde  &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &caret_at
-&kp TAB      &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                     &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &bt_pound
-&kp ESC      &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
-&kp ESC      &kp FSLH  &kp Q         &kp J      &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 1
-&mo 3        &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 2
+&dllr_tilde       &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &kp LG(R)
+&kp TAB           &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                     &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp LG(RET)
+&kp ESC           &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
+&kp LS(LEFT_GUI)  &kp FSLH  &kp Q         &kp J      &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 1
+&mo 3             &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 2
             >;
         };
 
