@@ -76,7 +76,7 @@
             label = "TDCAPS";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk LSHFT>, <&kp CAPS>;
+            bindings = <&kp LSHFT>, <&kp CAPS>;
         };
 
         bspc_del: bspc_del {
@@ -260,7 +260,7 @@
             label = "TDCWORD";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk RSHFT>, <&caps_word>;
+            bindings = <&kp RSHFT>, <&caps_word>;
         };
     };
 };
@@ -272,10 +272,10 @@
         lbase {
             bindings = <
 &dllr_tilde  &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                                     &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &kp LG(R)
-&kp TAB      &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                     &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp LG(RET)
+&kp TAB      &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                     &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp DELETE
 &kp ESC      &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL  &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
 &mo 1        &kp FSLH  &kp Q         &kp J      &kp K     &kp X                         &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &mo 2
-&mo 4        &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &bspc_del           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 3
+&mo 4        &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &tdcaps    &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &tdcword   &kp BSPC            &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 3
             >;
         };
 
