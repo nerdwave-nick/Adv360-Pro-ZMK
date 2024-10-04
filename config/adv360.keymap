@@ -234,21 +234,21 @@
 
         lbase {
             bindings = <
-&dllr_tilde   &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                                      &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &mo 2
-&kp TAB       &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                                      &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp DELETE
-&kp ESC       &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL   &kp LALT               &kp RALT              &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
-&kp CAPSLOCK  &kp FSLH  &kp Q         &kp J      &kp K     &kp X                          &kp LGUI               &kp RGUI                                      &kp B  &kp M     &kp W     &kp V    &kp Z      &caps_word
-&mo 3         &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &kp LSHIFT  &kp LS(LA(LCTRL))      &kp LS(LA(LC(LGUI)))  &kp RSHFT  &kp BSPC            &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
+&dllr_tilde   &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                             &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &mo 2
+&kp TAB       &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                             &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp DELETE
+&kp ESC       &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL   &kp LALT               &kp RALT     &kp RCTRL  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
+&kp CAPSLOCK  &kp FSLH  &kp Q         &kp J      &kp K     &kp X                          &kp LGUI               &kp RGUI                             &kp B  &kp M     &kp W     &kp V    &kp Z      &caps_word
+&mo 3         &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &kp LSHIFT  &kp LS(LA(LCTRL))      &kp K_CMENU  &kp RSHFT  &kp BSPC            &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
             >;
         };
 
         lgaming {
             bindings = <
-&kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &none  &none  &none  &none  &none
-&kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &none  &none  &none  &none  &none
-&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &none  &none  &none  &none  &none
-&kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &none  &none  &none  &none  &none
-&mo 3   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none  &none  &none  &none  &to 0
+&kp N5  &kp ESC    &kp N1  &kp N2  &kp N3  &kp N4  &kp F5                                          &none  &none  &kp F10  &kp F11  &kp F12  &none  &none
+&kp N6  &kp TAB    &kp Q   &kp W   &kp E   &kp R   &kp T                                           &none  &none  &kp F7   &kp F8   &kp F9   &none  &none
+&kp N7  &kp LSHFT  &kp A   &kp S   &kp D   &kp F   &kp G      &kp N5     &kp N6      &none  &none  &none  &none  &kp F4   &kp F5   &kp F6   &none  &none
+&kp N8  &kp LCTRL  &kp Z   &kp X   &kp C   &kp V                         &kp N7      &none                &none  &kp F1   &kp F2   &kp F3   &none  &none
+&mo 3   &kp LALT   &none   &none   &none           &kp SPACE  &kp LCTRL  &kp N8      &none  &none  &none         &none    &none    &none    &none  &to 0
             >;
         };
 
