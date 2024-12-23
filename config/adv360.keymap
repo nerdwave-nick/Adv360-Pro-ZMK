@@ -71,6 +71,27 @@
             bindings = <&kp ESC &kp COLON &kp W &kp RET>;
             label = "VIMSAVE";
         };
+
+        vimfmt: vimfmt {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp SPACE &kp F &kp F>;
+            label = "VIMFMT";
+        };
+
+        telescope: telescope {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp SPACE &kp P &kp F>;
+            label = "TELESCOPE";
+        };
+
+        grep: grep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESC &kp SPACE &kp P &kp S>;
+            label = "GREP";
+        };
     };
 };
 
@@ -229,16 +250,25 @@
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        caps_combo {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <66 69>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         lbase {
             bindings = <
-&dllr_tilde   &plus_1   &lbrk_2       &lbrc_3    &lpar_4   &amp_5  &exc_perc                                                          &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &mo 3
-&kp TAB       &kp SQT   &kp COMMA     &kp DOT    &kp P     &kp Y   &caret_at                                                          &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp DELETE
-&kp ESC       &kp A     &kp O         &kp E      &kp U     &kp I   &kp SEMI   &kp LCTRL   &kp LALT               &kp RALT  &kp K_APP  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
-&kp CAPSLOCK  &kp FSLH  &kp Q         &kp J      &kp K     &kp X                          &kp LGUI               &kp RGUI                          &kp B  &kp M     &kp W     &kp V    &kp Z      &caps_word
-&mo 4         &kp LGUI  &kp LEFT_ALT  &kp LCTRL  &vimsave          &kp SPACE  &kp LSHIFT  &kp LS(LA(LCTRL))      &to 2     &kp RSHFT  &kp BSPC            &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
+&dllr_tilde   &plus_1   &lbrk_2     &lbrc_3  &lpar_4   &amp_5  &exc_perc                                                          &pipe_bslsh  &eq_6  &rpar_7   &rbrc_8   &rbrk_9  &ast_0     &mo 3
+&kp TAB       &kp SQT   &kp COMMA   &kp DOT  &kp P     &kp Y   &caret_at                                                          &bt_pound    &kp F  &kp G     &kp C     &kp R    &kp L      &kp DELETE
+&kp ESC       &kp A     &kp O       &kp E    &kp U     &kp I   &kp SEMI   &kp LCTRL   &kp LALT               &kp RALT  &kp K_APP  &kp MINUS    &kp D  &kp H     &kp T     &kp N    &kp S      &kp ENTER
+&kp CAPSLOCK  &kp FSLH  &kp Q       &kp J    &kp K     &kp X                          &kp LGUI               &kp RGUI                          &kp B  &kp M     &kp W     &kp V    &kp Z      &caps_word
+&mo 4         &grep     &telescope  &vimfmt  &vimsave          &kp SPACE  &kp LSHIFT  &kp LS(LA(LCTRL))      &to 2     &kp RSHFT  &kp BSPC            &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT  &to 1
             >;
         };
 
