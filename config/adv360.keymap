@@ -250,14 +250,7 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        caps_combo {
-            bindings = <&kp CAPSLOCK>;
-            key-positions = <66 69>;
-        };
-    };
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
